@@ -1,0 +1,111 @@
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 100;
+
+  animation-name: showIn;
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+  animation-fill-mode: forwards;
+}
+
+.itemMenu {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 10px;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+  backface-visibility: hidden;
+  pointer-events: all;
+
+  & span {
+    text-align: right;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  &:hover {
+    transform: translateX(-10px);
+  }
+}
+
+.homeMenu {
+  @extend .itemMenu;
+
+  & span {
+    color: #FFA800;
+  }
+}
+
+.infoMenu {
+  @extend .itemMenu;
+
+  & span {
+    color: #C9F600;
+  }
+}
+
+.projectsMenu {
+  @extend .itemMenu;
+
+  & span {
+    color: #F80CEC;
+  }
+}
+
+.contactsMenu {
+  @extend .itemMenu;
+
+  & span {
+    color: #1F90EE;
+  }
+}
+
+.selectedMenu {
+  animation: rotateFigure 10000ms linear infinite;
+}
+
+.nonSelectedMenu {
+  margin-right: 3px;
+}
+
+@keyframes rotateFigure {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes showIn {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes showOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
