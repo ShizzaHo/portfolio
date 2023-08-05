@@ -1,0 +1,246 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 418px;
+  flex-shrink: 0;
+
+  animation-name: infoIn;
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+  animation-fill-mode: forwards;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    width: 100%;
+    text-align: left;
+  }
+
+  &__desc {
+    margin: 0;
+    margin-bottom: 30px;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: justify;
+  }
+
+  &__controls {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  &__button {
+    margin: 0;
+    padding: 0;
+    outline: none;
+
+    border: solid;
+    border-radius: 100%;
+    border-width: 1px;
+    border-color: white;
+    background-color: transparent;
+    height: 64px;
+    width: 64px;
+
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+
+    &:hover {
+      background-color: white;
+      
+      & > img {
+        filter: invert(80%);
+      }
+    }
+  }
+}
+
+.workExperience {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 900px;
+  flex-shrink: 0;
+
+  animation-name: infoTwoIn;
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+  animation-fill-mode: forwards;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+    text-align: end;
+    width: 100%;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+    text-align: end;
+    width: 100%;
+  }
+
+  &__desc {
+    margin: 0;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: justify;
+
+    text-align: end;
+  }
+}
+
+.abstractFigure {
+  position: absolute;
+  background: url(../../../public/figures/abstract4-1.svg);
+  background-size: cover;
+  width: 765px;
+  height: 559px;
+  right: -250px;
+  top: -250px;
+  transform: rotate(0deg);
+
+  animation: figureIn 1500ms cubic-bezier(0, 0.55, 0.45, 1);
+  animation-fill-mode: forwards;
+}
+
+.abstractFigureTwo {
+  position: absolute;
+  background: url(../../../public/figures/abstract4-2.svg);
+  background-size: cover;
+  width: 765px;
+  height: 559px;
+  left: -300px;
+  bottom: -200px;
+  transform: rotate(0deg);
+
+  animation: figureInTwo 1500ms cubic-bezier(0, 0.55, 0.45, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes figureIn {
+  0% {
+    right: -400px;
+    top: -400px;
+    transform: translateY(-300px) translateX(300px);
+    opacity: 0;
+  }
+  100% {
+    right: -250px;
+    top: -250px;
+    transform: translateY(0px) translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes figureOut {
+  0% {
+    right: -250px;
+    top: -250px;
+    transform: translateY(0px) translateX(0px);
+    opacity: 1;
+  }
+  100% {
+    right: -400px;
+    top: -400px;
+    transform: translateY(-300px) translateX(300px);
+    opacity: 0;
+  }
+}
+
+@keyframes figureInTwo {
+  0% {
+    left: -500px;
+    bottom: -500px;
+    transform: translateY(300px) translateX(300px);
+    opacity: 0;
+  }
+  100% {
+    left: -300px;
+    bottom: -200px;
+    transform: translateY(0px) translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes figureOutTwo {
+  0% {
+    left: -300px;
+    bottom: -200px;
+    transform: translateY(0px) translateX(0px);
+    opacity: 1;
+  }
+  100% {
+    left: -500px;
+    bottom: -500px;
+    transform: translateY(300px) translateX(300px);
+    opacity: 0;
+  }
+}
+
+@keyframes infoIn {
+  0% {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes infoOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+}
+

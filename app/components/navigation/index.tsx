@@ -68,7 +68,7 @@ export default function Navigation({exitPage, setExitPage}: any) {
         {getFigure(pathname == "/info" ? true : false, "#C9F600")}
       </div>
       <div className={styles.projectsMenu} onClick={()=>{callbacks.changePage("/projects")}}>
-        <span>Подробнее обо мне</span>
+        <span>Мои проекты</span>
         {getFigure(pathname == "/projects" ? true : false, "#AA00A2")}
       </div>
       <div className={styles.contactsMenu} onClick={()=>{callbacks.changePage("/contacts")}}>
