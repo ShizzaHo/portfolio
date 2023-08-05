@@ -7,27 +7,22 @@
 }
 
 .info {
+  position: absolute;
+  left: 32px;
+  top: 32px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  width: 446px;
+  width: 720px;
   flex-shrink: 0;
 
   animation-name: infoIn;
   animation-duration: 1000ms;
   animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
   animation-fill-mode: forwards;
-
-  &__image {
-    width: 160px;
-    height: 160px;
-    flex-shrink: 0;
-    border-radius: 100%;
-    margin: 0;
-    margin-bottom: 20px;
-  }
 
   &__title {
     margin: 0;
@@ -37,16 +32,74 @@
     font-style: normal;
     font-weight: 800;
     line-height: normal;
+    width: 100%;
+    text-align: left;
   }
 
   &__desc {
     margin: 0;
 
-    font-size: 20px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.workExperience {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 900px;
+  flex-shrink: 0;
+
+  animation-name: infoTwoIn;
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+  animation-fill-mode: forwards;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+    text-align: end;
+    width: 100%;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+    text-align: end;
+    width: 100%;
+  }
+
+  &__desc {
+    margin: 0;
+
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-align: justify;
+
+    text-align: end;
   }
 }
 
@@ -141,21 +194,44 @@
 @keyframes infoIn {
   0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: translateX(-500px);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: translateX(0px);
   }
 }
 
 @keyframes infoOut {
   0% {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0px);
   }
   100% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: translateY(-500px);
   }
 }
+
+@keyframes infoTwoIn {
+  0% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes infoTwoOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+}
+

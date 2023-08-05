@@ -23,6 +23,7 @@ body {
 }
 
 .globalContainer {
+  position: relative;
   max-width: var(--size-global-container);
   margin: 0 auto;
 }
